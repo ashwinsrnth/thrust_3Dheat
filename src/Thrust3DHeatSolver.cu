@@ -7,6 +7,7 @@
 
 # include <Thrust3DHeatSolver.h>
 # include <temperature_update_functor.h>
+# include <printmatrix.h>
 
 
 Thrust3DHeatSolver::Thrust3DHeatSolver(SimData& _sim):sim(_sim){};
@@ -49,7 +50,7 @@ void Thrust3DHeatSolver::close(){
 }
 
 void Thrust3DHeatSolver::write(char* fname){
-    write_to_file(thrust::raw_pointer_cast(sim.temp_h.data(),
+    write_to_file(thrust::raw_pointer_cast(sim.temp_h.data()),
                   sim.N_x*sim.N_y*sim.N_z, 
                   fname);
 }

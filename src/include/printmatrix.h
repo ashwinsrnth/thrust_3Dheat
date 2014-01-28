@@ -1,7 +1,8 @@
+# pragma once
+
 # include <iostream>
 # include <iomanip>
 # include <fstream>
-# include <printmatrix.h>
 
 template <typename T>
 void write_to_file(T* ary, int N, char* S){

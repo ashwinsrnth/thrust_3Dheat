@@ -1,5 +1,5 @@
 # include <SimData.h>
-# include <initialise_vectors.h>
+# include <initialise_data.h>
 # include <Thrust3DHeatSolver.h>
 # include <read_data.h>
 
@@ -18,7 +18,7 @@ int main(){
         solver->take_step();
     }
 
-    solve->close();
+    solver->close();
     solver->write("output.dat");
     
     return 0;
