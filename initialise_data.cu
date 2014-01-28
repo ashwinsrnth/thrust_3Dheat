@@ -1,10 +1,9 @@
 # include <thrust/fill.h>
-# include <initialise_vectors.h>
+# include <initialise_data.h>
 # include <SimData.h>
 
-void initialise_vectors(SimData& sim){
+void initialise_data(SimData& sim){
     
-    // TODO: THINK ABOUT WHERE ELSE TO PUT THIS
     sim.dx = sim.L_x/sim.N_x;
     sim.dy = sim.L_y/sim.N_y;
     sim.dz = sim.L_z/sim.N_z;
