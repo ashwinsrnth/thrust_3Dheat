@@ -4,6 +4,7 @@
 # include <detail.h>
 # include <tiled.h>
 
+
 class Thrust3DHeatSolver
 {
 public:
@@ -12,7 +13,7 @@ public:
     void take_step();
     void close();
     bool finished();
-    
+    void write(char* fname);
     SimData& sim;
 
 private:

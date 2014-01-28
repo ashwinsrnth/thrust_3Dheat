@@ -7,16 +7,19 @@ int main(){
 
     SimData sim = read_data("params.yml");
     
-    initialise_vectors(sim);
+    initialise_data(sim);
 
     Thrust3DHeatSolver* solver = 
         new Thrust3DHeatSolver(sim);
 
     solver->initialise();
 
-    for(int i=0; i<5; i++){
+    for(int i=0; i<sim.nsteps; i++){
         solver->take_step();
     }
+
+    solve->close();
+    solver->write("output.dat");
     
     return 0;
 }

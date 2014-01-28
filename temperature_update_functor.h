@@ -19,9 +19,8 @@ public:
         ix= I%(N_x * N_y)%N_x;
         iy= I%(N_x * N_y)/N_x;
 
-
-        if ((ix%(N_x-1)!=0) && (ix%(N_x)!=0) &&
-            (iy%(N_y-1)!=0) && (iy%(N_y)!=0)){
+        if (((ix%(N_x-1))!=0) && ((ix%(N_x))!=0) &&
+            ((iy%(N_y-1))!=0) && ((iy%(N_y))!=0)){
 
             thrust::get<0>(T) +=    (alpha*dt)*(
 

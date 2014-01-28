@@ -18,7 +18,7 @@ void Thrust3DHeatSolver::make_FD_stencil(){
 
     thrust::device_vector<double>::iterator start = sim.temp_d.begin()+
                                                     sim.N_x*sim.N_y;
-    thrust::counting_iterator<int> count;
+    thrust::counting_iterator<int> count(0);
     FD_stencil =    thrust::make_zip_iterator(
                     thrust::make_tuple(
                         start,
@@ -40,4 +40,16 @@ void Thrust3DHeatSolver::take_step(){
                      temperature_update_functor(sim.alpha, 
                      sim.dx, sim.dy, sim.dz, sim.dt,
                      sim.N_x, sim.N_y));
+}
+
+
+void Thrust3DHeatSolver::close(){
+    // copy back to host:
+    sim.temp_h = sim.temp_d;
+}
+
+void Thrust3DHeatSolver::write(char* fname){
+    write_to_file(thrust::raw_pointer_cast(sim.temp_h.data(),
+                  sim.N_x*sim.N_y*sim.N_z, 
+                  fname);
 }
