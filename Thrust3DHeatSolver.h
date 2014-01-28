@@ -16,8 +16,6 @@ public:
     SimData& sim;
 
 private:
-    void make_FD_stencil();
-    void temperature_update_functor();
-
+    void make_FD_stencil();    
     FDStencilIterator       FD_stencil;
 };

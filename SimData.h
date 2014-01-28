@@ -9,8 +9,8 @@ public:
     thrust::host_vector<double>   temp_h;
     thrust::device_vector<double> temp_d;
 
-    float   L_x, L_y, L_z,
-            alpha, dt;
+    double   L_x, L_y, L_z,
+             alpha, dt, dx, dy, dz;
 
     int     N_x, N_y, N_z,
             nsteps;

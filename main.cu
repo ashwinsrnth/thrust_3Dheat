@@ -13,5 +13,10 @@ int main(){
         new Thrust3DHeatSolver(sim);
 
     solver->initialise();
+
+    for(int i=0; i<5; i++){
+        solver->take_step();
+    }
     
+    return 0;
 }

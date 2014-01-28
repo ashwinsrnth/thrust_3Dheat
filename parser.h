@@ -21,9 +21,9 @@ namespace YAML
         }
 
         static bool decode(const Node& node, SimData& sim){
-            sim.alpha     = node["nu"].as<double>();
+            sim.alpha     = node["alpha"].as<double>();
             sim.dt        = node["dt"].as<double>();
-            sim.nsteps    = node["nsteps"].as<double>();
+            sim.nsteps    = node["nsteps"].as<int>();
             sim.L_x       = node["L_x"].as<double>();
             sim.L_y       = node["L_y"].as<double>();
             sim.L_z       = node["L_z"].as<double>();

@@ -3,9 +3,16 @@
 # include <SimData.h>
 
 void initialise_vectors(SimData& sim){
-
+    
+    // TODO: THINK ABOUT WHERE ELSE TO PUT THIS
+    sim.dx = sim.L_x/sim.N_x;
+    sim.dy = sim.L_y/sim.N_y;
+    sim.dz = sim.L_z/sim.N_z;
+    
     // Fill host memory and then copy to device
-
+    sim.temp_h.resize(sim.N_x*sim.N_y*sim.N_z);
+    sim.temp_d.resize(sim.N_x*sim.N_y*sim.N_z);
+    
     init_temp(thrust::raw_pointer_cast(sim.temp_h.data()),
                                        sim.N_x, sim.N_y, sim.N_z);
 
