@@ -15,6 +15,7 @@ void initialise_data(SimData& sim){
     init_temp(thrust::raw_pointer_cast(sim.temp_h.data()),
                                        sim.N_x, sim.N_y, sim.N_z);
 
+    // Copy to device
     sim.temp_d = sim.temp_h;
 }
 
