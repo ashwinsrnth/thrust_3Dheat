@@ -25,15 +25,15 @@ public:
             thrust::get<0>(T) +=    (alpha*dt)*(
 
                 (   thrust::get<0>(thrust::get<1>(T)) 
-                -   2*thrust::get<0>(T)
+                -   2.0*thrust::get<0>(T)
                 +   thrust::get<1>(thrust::get<1>(T)))/(dx*dx)
                 +
                 (   thrust::get<0>(thrust::get<2>(T))
-                -   2*thrust::get<0>(T)
+                -   2.0*thrust::get<0>(T)
                 +   thrust::get<1>(thrust::get<2>(T)))/(dy*dy)
                 +
                 (   thrust::get<0>(thrust::get<3>(T))
-                -   2*thrust::get<0>(T)
+                -   2.0*thrust::get<0>(T)
                 +   thrust::get<1>(thrust::get<3>(T)))/(dz*dz));
         }
     }
@@ -41,4 +41,4 @@ public:
     private:
         double alpha, dt, dx, dy, dz;
         int N_x, N_y, N_z;
-};
+};  

@@ -15,10 +15,6 @@ void Thrust3DHeatSolver::initialise(){
     make_FD_stencil();
 }
 
-
-
-
-
 void Thrust3DHeatSolver::make_FD_stencil(){
 
     /*  Create a zip_iterator for 7-pt stencils
@@ -57,7 +53,7 @@ void Thrust3DHeatSolver::make_FD_stencil(){
                         start-sim.N_y, 
                         start+sim.N_y)),
                         thrust::make_zip_iterator(thrust::make_tuple(
-                        start-sim.N_y*sim.N_x, 
+                        start-sim.N_x*sim.N_x, 
                         start+sim.N_x*sim.N_y)),
                         count));
 }
