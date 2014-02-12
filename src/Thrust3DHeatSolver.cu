@@ -41,7 +41,7 @@ void Thrust3DHeatSolver::make_FD_stencil(){
     // First point:
     thrust::device_vector<double>::iterator start = sim.temp_d.begin()+
                                                     sim.N_x*sim.N_y;
-    thrust::counting_iterator<int> count(0);
+    thrust::counting_iterator<int> count(sim.N_x*sim.N_y);
 
     FD_stencil =    thrust::make_zip_iterator(
                     thrust::make_tuple(

@@ -13,6 +13,8 @@ public:
     template <typename Tuple>
     __host__ __device__
     void operator () (Tuple T){
+
+        /* TODO: move this outside functor! */
         int     I, ix, iy;
         
         I = thrust::get<4>(T);
